@@ -1,6 +1,6 @@
 import random
 
-# русско-англйсский словарб
+# русско-англйсский словарб - The Russian to English dictonary using begginers phrases.
 russian_words = {
     "Привет": "Hello",
     "Пожалуйста": "Please",
@@ -203,7 +203,7 @@ def get_random_word():
 def preprocess(text):
     return text.lower().replace("'", "")
 
-# function to play a round of the game
+# function to play a round of the game and also defines correct and inccorect answers
 def play_game():
     points = 0
     incorrect_answers = 0
@@ -230,12 +230,12 @@ def play_game():
                     incorrect_answers += 1
                     print(f"Неправильный. The correct translation was '{correct_translation}'.")
         
-        # Level up if the user answers correctly 3 times in a row
+        # level up if the user answers correctly 3 times in a row
         if points // 30 >= level:
             level += 1
             print(f"Отличная работа! You've reached level {level}.")
         
-        # End game if the user has had 3 incorrect answers
+        # ends the game if the user has had 3 incorrect answers
         if incorrect_answers >= 3:
             break
     
